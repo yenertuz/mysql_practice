@@ -1,3 +1,6 @@
+# get nth highest using a stored procedure
+
+
 use yenertuz;
 drop procedure if exists temp1;
 
