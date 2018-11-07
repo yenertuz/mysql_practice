@@ -1,0 +1,17 @@
+# nth highest using new table and insert into and update new
+
+use yenertuz;
+
+drop table if exists new;
+
+create table new like employees;
+
+insert into new (department) select distinct(department) from employees;
+
+update new
+set name = (select name from employees where employees.department = new.department limit 1, 1),
+salary = (select salary from employees where employees.name = new.name and employees.department = new.department);
+
+select * from new;
+
+drop table new;
