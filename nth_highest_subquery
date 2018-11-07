@@ -1,0 +1,7 @@
+# find the nth highest, not by department, using subquery
+
+use yenertuz;
+
+select * from employees as e1
+where 1 =
+( select count(*) from employees as e2 where e2.salary > e1.salary) ; 
